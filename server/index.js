@@ -10,7 +10,6 @@ app.use(helmet());
 app.use(express.json());
 app.use(cors());
 app.post("/send-message", (req, res) => {
-  console.log(req.body);
   if (req.body.room == 1) {
     roomMessages.roomOne.push({
       name: req.body.name,
@@ -25,7 +24,6 @@ app.post("/send-message", (req, res) => {
 
 app.get("/get-chat/:id", (req, res) => {
   if (req.params.id == 1) {
-    console.log(roomMessages.roomOne);
     return res.send(roomMessages.roomOne);
   }
   return res.json(roomMessages.roomTwo);
