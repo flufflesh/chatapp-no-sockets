@@ -1,5 +1,7 @@
 # Tictuk chat app
 
+Run `git clone https://github.com/sasasiassa/tictuk-chatapp folderName` to clone it into your own folder
+
 ## To run front-end
 
 `cd chatapp`
