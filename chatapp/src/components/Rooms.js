@@ -18,6 +18,7 @@ const RoomsContainer = styled.div`
 `;
 
 const Rooms = (props) => {
+  // When clicking the room, change room to roomNumber
   const onClicked = (roomNumber) => {
     props.changeRoom(roomNumber);
   };

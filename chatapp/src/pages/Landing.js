@@ -42,12 +42,14 @@ const Landing = () => {
   const [name, setName] = useContext(NameContext);
   const [input, setInput] = useState("");
   const onChanges = (e) => {
+    // Change name state every time user types something
     setInput(e.currentTarget.value);
   };
   const onClicked = () => {
     setName(input);
   };
   const onKeyDown = (e) => {
+    // If not enter, return
     if (e.keyCode != 13) return;
     setName(input);
   };

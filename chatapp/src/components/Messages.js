@@ -36,13 +36,16 @@ const Input = styled.input`
 `;
 const Messages = (props) => {
   const onKeyDown = async (e) => {
+    // If not enter, return
     if (e.keyCode !== 13) return;
     let value = e.currentTarget.value;
+    // Post the message
     await axios.post("http://localhost:1234/send-message", {
       room: props.room,
       name: props.name,
       message: value,
     });
+    // Change value back to an empty string.
     e.target.value = "";
   };
   const [room, setRoom] = useContext(RoomContext);

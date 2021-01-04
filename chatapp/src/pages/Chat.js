@@ -17,9 +17,12 @@ const Chat = () => {
   const [messages, setMessages] = useState();
   const [name, setName] = useContext(NameContext);
   const [room, setRoom] = useContext(RoomContext);
+  // Ref for current room, otherwise won't update room.
   const roomRef = useRef(room);
   roomRef.current = room;
+  // Ref for clearing timer
   const timerToClear = useRef(null);
+
   async function getMessage() {
     const currentRoom = roomRef.current;
     let messages = await axios.get(
