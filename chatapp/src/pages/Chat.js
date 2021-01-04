@@ -5,6 +5,8 @@ import Messages from "../components/Messages";
 import styled from "styled-components";
 import NameContext from "../context/NameContext";
 import RoomContext from "../context/RoomContext";
+import { Redirect } from "react-router-dom";
+
 const ChatContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -33,10 +35,15 @@ const Chat = () => {
   }
 
   useEffect(() => {
+    if (!name) {
+      return;
+    }
     getMessage();
     return clearInterval(timerToClear.current);
   }, [room]);
-
+  if (!name) {
+    return <Redirect to="/" />;
+  }
   return (
     <ChatContainer>
       <Rooms changeRoom={setRoom} />
