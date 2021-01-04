@@ -40,7 +40,7 @@ const Messages = (props) => {
     if (e.keyCode !== 13) return;
     let value = e.currentTarget.value;
     // Post the message
-    await axios.post("http://localhost:1234/send-message", {
+    await axios.post("http://localhost:2345/send-message", {
       room: props.room,
       name: props.name,
       message: value,

@@ -26,7 +26,7 @@ const Chat = () => {
   async function getMessage() {
     const currentRoom = roomRef.current;
     let messages = await axios.get(
-      "http://localhost:1234/get-chat/" + currentRoom
+      "http://localhost:2345/get-chat/" + currentRoom
     );
     setMessages(messages.data);
     timerToClear.current = setTimeout(getMessage, 1000);
