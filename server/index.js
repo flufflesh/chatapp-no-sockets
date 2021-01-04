@@ -29,5 +29,5 @@ app.get("/get-chat/:id", (req, res) => {
   return res.json(roomMessages.roomTwo);
 });
 app.listen(2345, () => {
-  console.log("listening on port 1234");
+  console.log("listening on port 2345");
 });
