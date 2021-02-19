@@ -1,4 +1,4 @@
-# Tictuk chat app
+# Chat app no sockets
 
 Run `git clone https://github.com/sasasiassa/tictuk-chatapp folderName` to clone it into your own folder
 
